@@ -55,17 +55,17 @@ CSS frameworks are a quick and easy way to make pretty and functional websites, 
 
 In this assignment, we are going to add Bulma styles to the raw HTML provided in the assignment directory. The goal is to use Bulma to improve the way this page looks, all without writing a single line of CSS.
 
-Since Bulma is a CSS framework, it is essentially one giant pre-written CSS stylesheet. In order to start styling our pages with Bulma, we need to first link the HTML to the Bulma CSS. Recall from a01 that CSS stylesheets can be linked to HTML documents by adding a special <link> tag inside the <head> of the document.
+Since Bulma is a CSS framework, it is essentially one giant pre-written CSS stylesheet. In order to start styling our pages with Bulma, we need to first link the HTML to the Bulma CSS. Recall from a01 that CSS stylesheets can be linked to HTML documents by adding a special `<link>` tag inside the `<head>` of the document.
 
-However, this raises an important question: where should we store the giant Bulma CSS stylesheet, and what path do we put in the <link href=""> attribute in order to link to it?
+However, this raises an important question: where should we store the giant Bulma CSS stylesheet, and what path do we put in the `<link href="">` attribute in order to link to it?
 
 Generally speaking, there are three feasible possibilities:
 
-1. Download the Bulma CSS file manually, save it in the a02-$YOURGITHUBUSERNAME directory, and <link> to it with a relative path.
+1. Download the Bulma CSS file manually, save it in the `a02-$YOURGITHUBUSERNAME` directory, and `<link>` to it with a relative path.
 
-2. In the HTML file, <link> directly to an online version of the Bulma CSS file hosted by a Content Delivery Network (CDN).
+2. In the HTML file, `<link>` directly to an online version of the Bulma CSS file hosted by a Content Delivery Network (CDN).
 
-3. Download the Bulma CSS file as a dependency using npm, and <link> to the downloaded file relatively from node_modules.
+3. Download the Bulma CSS file as a dependency using npm, and `<link>` to the downloaded file relatively from `node_modules`.
 
 > A Content Delivery Network, or CDN, is a giant network of servers geographically spread across a large region—like the country, the continent, or the world. The servers in a CDN work together to deliver website data such as video, images, audio, html, etc. to users as fast and as reliably as possible. By spreading out the servers across the world, there is a greater chance that any given user will be geographically close to a CDN server. If the closest server in the network responds to a user’s request, it’s likely that the response will arrive even faster.
 
@@ -75,33 +75,33 @@ These three options are discussed in more detail on the official getting started
 
 Therefore, to download Bulma as a dependency, run the following command from the terminal in your a02-$YOURGITHUBUSERNAME directory:
 
-> $ npm install bulma
+`$ npm install bulma`
 
-> Note: You may still have Browsersync running in your terminal. Thus, to run npm install bulma, you either need to open a new terminal from the a02-$YOURGITHUBUSERNAME directory (right click your a02-$YOURGITHUBUSERNAME directory and select “Open in Terminal”), or you need to kill the Browsersync process with Ctrl + C to free up the existing terminal instance.
+> Note: You may still have Browsersync running in your terminal. Thus, to run `npm install bulma`, you either need to open a new terminal from the `a02-$YOURGITHUBUSERNAME` directory (right click your `a02-$YOURGITHUBUSERNAME` directory and select “Open in Terminal”), or you need to kill the Browsersync process with Ctrl + C to free up the existing terminal instance.
 
 ## Finding the Bulma stylesheet
 
-Now that Bulma has been downloaded, the next step is to connect the CSS to the HTML by adding <link> tags in the <head> of the HTML documents. But what URL should we use as the href attribute of the <link> tag? We need to look at the files that were downloaded by npm and find the correct CSS file.
+Now that Bulma has been downloaded, the next step is to connect the CSS to the HTML by adding `<link>` tags in the `<head>` of the HTML documents. But what URL should we use as the href attribute of the `<link>` tag? We need to look at the files that were downloaded by npm and find the correct CSS file.
 
-Every time you npm install a new dependency, npm automatically downloads the requested files from the internet and puts them in a special directory named node_modules. This process occurred when you ran npm install bulma, meaning the Bulma files are now ready and waiting in the node_modules directory in your a02-$YOURGITHUBUSERNAME directory. Open node_modules now and confirm that bulma has been downloaded. When you expand the directorys, it should look something like this:
+Every time you npm install a new dependency, npm automatically downloads the requested files from the internet and puts them in a special directory named node_modules. This process occurred when you ran npm install bulma, meaning the Bulma files are now ready and waiting in the node_modules directory in your `a02-$YOURGITHUBUSERNAME` directory. Open node_modules now and confirm that bulma has been downloaded. When you expand the directorys, it should look something like this:
 
 ![](images/bulma-code.png)
 
-Inside of the new a02-$YOURGITHUBUSERNAME/node_modules/bulma directory is a list of files and directories that collectively make up Bulma. In particular, you’ll notice a sub-directory named css, which contains three files:
+Inside of the new `a02-$YOURGITHUBUSERNAME/node_modules/bulma` directory is a list of files and directories that collectively make up Bulma. In particular, you’ll notice a sub-directory named css, which contains three files:
 
 - node_modules/css/bulma.css
 - node_modules/css/bulma.css.map
 - node_modules/css/bulma.min.css
 
-The two files that end in .css are exactly what we’re looking for! In fact, both bulma.css and bulma.min.css represent complete copies of the Bulma CSS source code, and either one would work for this assignment.
+The two files that end in .css are exactly what we’re looking for! In fact, both `bulma.css` and `bulma.min.css` represent complete copies of the Bulma CSS source code, and either one would work for this assignment.
 
-What is the difference between the two files? bulma.min.css is a minified version of Bulma, which means the CSS code was purposefully compressed to take up as few characters as possible. All newlines and whitespace are gone from the code, meaning it has a smaller file size and is therefore faster to transfer across the internet. Your browser doesn’t need the extra whitespace, and is perfectly happy reading and understanding the minified version. However, minified code is generally much harder for humans to read!
+What is the difference between the two files? `bulma.min.css` is a minified version of Bulma, which means the CSS code was purposefully compressed to take up as few characters as possible. All newlines and whitespace are gone from the code, meaning it has a smaller file size and is therefore faster to transfer across the internet. Your browser doesn’t need the extra whitespace, and is perfectly happy reading and understanding the minified version. However, minified code is generally much harder for humans to read!
 
 ## Linking to Bulma in HTML
 
-Now that we found the location of the Bulma CSS stylesheet, we can link it to the HTML file. The file we want is located at node_modules/bulma/css/bulma.css relative to the a02-$YOURGITHUBUSERNAME root directory.
+Now that we found the location of the Bulma CSS stylesheet, we can link it to the HTML file. The file we want is located at `node_modules/bulma/css/bulma.css` relative to the `a02-$YOURGITHUBUSERNAME` root directory.
 
-Add the following line inside the <head> of the HTML document in a02:
+Add the following line inside the `<head>` of the HTML document in a02:
 
 `<link rel="stylesheet" href="node_modules/bulma/css/bulma.css">`
 
@@ -121,7 +121,7 @@ Bulma automatically adds default styles to your page that affect little things l
 
 The default styles added to your page by linking to Bulma are just the beginning. The real power of Bulma comes with its CSS classes. Bulma defines and styles hundreds of little utility CSS classes for use in your HTML.
 
-Need to change the background color of a <div> and make it yellow? Bulma pre-defines a CSS class for that.
+Need to change the background color of a `<div>` and make it yellow? Bulma pre-defines a CSS class for that.
 
 Need to add a red glow to a form input field when the user types an invalid value? There’s a class for it.
 
@@ -135,12 +135,12 @@ Go to the Bulma documentation and click through the menu on the right side of th
 
 ## Submission requirements
 
-For this assignment, your task is to correctly add Bulma classes to the a02-$YOURGITHUBUSERNAME/index.html HTML document to make it look exactly like the screenshots linked below.
+For this assignment, your task is to correctly add Bulma classes to the `a02-$YOURGITHUBUSERNAME/index.html` HTML document to make it look exactly like the screenshots linked below.
 
 NOTE:
 
 1. You may not change the HTML elements on the page at all, except for adding Bulma classes.
-2. You also may not add any custom CSS styles or edit custom_styles.css.
+2. You also may not add any custom CSS styles or edit `custom_styles.css`.
 
 You are required to reproduce the style from the screenshots exactly. To make this easier, we have included a table below containing all the classes you’ll need to use. You’ll also notice that as a hint, some of the elements in the HTML file already have their classes defined; there is no need to add or remove classes from these elements.
 
@@ -199,7 +199,6 @@ For example, when you see subtitle has-text-grey has-text-weight-light you can a
 | title has-text-weight-bold  | |
 | title has-text-weight-light  | |
 | title has-text-weight-normal  | |
-|  | |
 
 ## Wrap-up
 
