@@ -163,42 +163,41 @@ Notice how the table below isn’t just a list of classes used, but a list of cl
 
 For example, when you see subtitle has-text-grey has-text-weight-light you can assume that this is styling a single html element. In this case it styles the subtitle on line 77. You won’t see combinations other than the ones listed in the table below.
 
-| Class List | Documentation Section |
-| ---------- | --------------------- |
-| button is-dark | Buttons |
-| checkbox | Forms |
-| column | Columns/Layout |
-| columns | |
-| columns is-multiline justify-center | |
-| container | Layout |
-| content | Elements -> Content |
-| content has-text-centered | |
-| content has-text-right | |
-| control | Form |
-| field | Form |
-| has-text-weight-bold | Modifiers -> Typography |
-| hero is-dark is-fullheight | Layout -> Hero |
-| hero-body  | |
-| input | Form |
-| is-active  | |
-| is-capitalized  | |
-| label  | |
-| notification is-danger | Elements -> Notification |
-| section | Layout -> Section |
-| section has-background-white 	
-| select  | |
-| subtitle | |
-| subtitle has-text-grey  | |
-| subtitle has-text-grey has-text-weight-bold  | |
-| subtitle has-text-grey has-text-weight-light  | |
-| subtitle has-text-grey has-text-weight-normal  | |
-| subtitle has-text-grey is-italic  | |
-| tabs is-medium is-centered  | |
-| title  | |
-| title has-text-info is-family-secondary  | |
-| title has-text-weight-bold  | |
-| title has-text-weight-light  | |
-| title has-text-weight-normal  | |
+Class List [Documentation Section]
+- [ ] button is-dark [Buttons]
+- [ ] checkbox [Forms] 
+- [ ] column [Columns/Layout]
+- [ ] columns 
+- [ ] columns is-multiline justify-center
+- [ ] container [Layout] 
+- [ ] content [Elements -> Content]
+- [ ] content has-text-centered]
+- [ ] content has-text-right
+- [ ] control [Form] 
+- [ ] field [Form] 
+- [ ] has-text-weight-bold [Modifiers -> Typography] 
+- [ ] hero is-dark is-fullheight [Layout -> Hero] 
+- [ ] hero-body  
+- [ ] input [Form] 
+- [ ] is-active 
+- [ ] is-capitalized
+- [ ] label 
+- [ ] notification is-danger [Elements -> Notification] 
+- [ ] section [Layout -> Section] 
+- [ ] section has-background-white 	
+- [ ] select  
+- [ ] subtitle 
+- [ ] subtitle has-text-grey  
+- [ ] subtitle has-text-grey has-text-weight-bold  
+- [ ] subtitle has-text-grey has-text-weight-light  
+- [ ] subtitle has-text-grey has-text-weight-normal 
+- [ ] subtitle has-text-grey is-italic 
+- [ ] tabs is-medium is-centered  
+- [ ] title  
+- [ ] title has-text-info is-family-secondary 
+- [ ] title has-text-weight-bold  
+- [ ] title has-text-weight-light 
+- [ ] title has-text-weight-normal 
 
 ## Wrap-up
 
