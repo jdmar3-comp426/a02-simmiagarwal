@@ -1,0 +1,23 @@
+{
+  "name": "a02-simmiagarwal",
+  "version": "1.0.0",
+  "description": "like building a house assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://simmiagarwal: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@github.com/jdmar3-comp426/a02-simmiagarwal.git"
+  },
+  "author": "",
+  "license": " GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/jdmar3-comp426/a02-simmiagarwal/issues"
+  },
+  "homepage": "https://github.com/jdmar3-comp426/a02-simmiagarwal#readme",
+  "dependencies": {
+    "browser-sync": "^2.27.7",
+    "bulma": "^0.9.3"
+  }
+}
